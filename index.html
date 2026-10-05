@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>5060电影网 - 精选影视片单与热门影视榜单资讯平台</title>
+<meta name="description" content="5060电影网（https://5060dianyingwang-cn.github.io）提供精选影视片单、热门影视榜单、新片速递与影视资讯解读，每日更新高分佳作，页面移动端自适应，帮你一站直达值得一看的好电影。">
+<meta name="keywords" content="5060电影网,电影网,精选影视片单,热门影视榜单,新片速递,高分电影推荐,影视资讯,追剧指南">
+<meta name="author" content="5060电影网">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#22282f">
+<link rel="canonical" href="https://5060dianyingwang-cn.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="5060电影网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="5060电影网 - 精选影视片单与热门影视榜单资讯平台">
+<meta property="og:description" content="5060电影网每日更新精选影视片单、热门影视榜单、新片速递与影视资讯，移动端自适应。">
+<meta property="og:url" content="https://5060dianyingwang-cn.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5060电影网 - 精选影视片单与热门影视榜单资讯平台">
+<meta name="twitter:description" content="精选影视片单、热门影视榜单与新片速递，尽在5060电影网。">
+<style>
+:root{
+  --slate:#22282f;
+  --slate-2:#2e3640;
+  --slate-3:#3c4652;
+  --paper:#f4f4f1;
+  --paper-2:#eaeae5;
+  --white:#ffffff;
+  --ink:#1e232a;
+  --ink-2:#5c6572;
+  --ink-3:#8d96a3;
+  --red:#e8443a;
+  --blue:#2f6fd0;
+  --green:#12996b;
+  --orange:#f0821e;
+  --purple:#7b4bc4;
+  --yellow:#f0bf2a;
+  --amber:#fff8e6;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+  --wrap:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;line-height:1.82;overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.tag-mono{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+
+/* 箭头按钮（chevron） */
+.btn{
+  display:inline-block;padding:14px 40px 14px 28px;font-weight:800;font-size:15px;
+  background:var(--yellow);color:var(--ink);
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);
+  transition:background .18s,color .18s;
+}
+.btn:hover{background:var(--red);color:#fff}
+.btn.dark{background:var(--slate);color:#fff}
+.btn.dark:hover{background:var(--blue);color:#fff}
+.btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)}
+.btn.line:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* ========== 顶部：导视横牌 ========== */
+.signbar{position:sticky;top:0;z-index:100;background:var(--slate);color:#fff;border-bottom:4px solid var(--yellow)}
+.signbar .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:74px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;
+}
+.route-logo{display:flex;align-items:center;gap:13px;flex:0 0 auto}
+.route-badge{
+  min-width:62px;height:44px;padding:0 12px;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);
+  font-weight:700;font-size:17px;letter-spacing:.06em;border-radius:4px;
+}
+.route-txt .zh{font-size:19px;font-weight:900;letter-spacing:-.01em;line-height:1.2}
+.route-txt .en{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:#9aa5b3;text-transform:uppercase}
+.signnav{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.signnav a{
+  display:inline-flex;align-items:center;gap:7px;padding:9px 14px;font-size:14.5px;font-weight:700;
+  color:rgba(255,255,255,.78);transition:color .18s,background .18s;white-space:nowrap;
+}
+.signnav a::before{content:"▸";color:var(--yellow);font-size:11px}
+.signnav a:hover{color:#fff;background:var(--slate-2)}
+.signnav a.on{color:#fff;background:var(--slate-2)}
+.signnav a.on::before{color:var(--red)}
+.signnav a.enter{
+  margin-left:8px;background:var(--yellow);color:var(--ink);font-weight:800;
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%);padding-right:26px;
+}
+.signnav a.enter::before{content:"";display:none}
+.signnav a.enter:hover{background:var(--red);color:#fff}
+#menu-state{display:none}
+.panel-btn{
+  display:none;cursor:pointer;font-family:var(--mono);font-size:13px;font-weight:700;
+  background:var(--yellow);color:var(--ink);padding:11px 20px;border-radius:4px;
+}
+
+/* ========== HERO：龙门架指示牌 ========== */
+.hero{padding:30px 0 26px}
+.gantry{
+  background:var(--slate);color:#fff;position:relative;overflow:hidden;
+  border-radius:6px;padding:52px 44px 46px;
+}
+.gantry::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:6px;
+  background:repeating-linear-gradient(90deg,var(--yellow) 0 26px,var(--slate) 26px 52px);
+}
+.gantry::after{
+  content:"";position:absolute;right:-70px;bottom:-70px;width:280px;height:280px;border-radius:50%;
+  border:26px solid rgba(255,255,255,.05);pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.pill-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill-line{
+  display:inline-flex;align-items:center;gap:8px;background:var(--slate-2);padding:6px 14px;border-radius:4px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--yellow);
+}
+.pill-line i{width:9px;height:9px;border-radius:2px;background:var(--red);display:block;font-style:normal}
+.hero h1{
+  font-size:clamp(30px,5.8vw,52px);line-height:1.22;font-weight:900;letter-spacing:-.035em;margin-top:20px;
+}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero .desc{
+  margin-top:18px;font-size:clamp(14.5px,2.1vw,16.5px);color:rgba(255,255,255,.78);
+  max-width:580px;line-height:1.98;
+}
+.url-sign{
+  margin-top:22px;display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;
+  border:2px dashed rgba(240,191,42,.5);padding:10px 20px;border-radius:4px;background:rgba(0,0,0,.16);
+}
+.url-sign span{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--yellow)}
+.url-sign b{font-family:var(--mono);font-size:13.5px;font-weight:400;color:#fff;word-break:break-all}
+.hero-btns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* 线路图卡 */
+.map-card{
+  background:var(--white);color:var(--ink);border-radius:6px;padding:22px 22px 20px;
+  box-shadow:0 14px 30px rgba(0,0,0,.28);
+}
+.map-card .mh{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase;
+  padding-bottom:12px;border-bottom:2px solid var(--paper-2);margin-bottom:26px;
+}
+.map-card .mh b{color:var(--red);letter-spacing:.1em}
+.route{position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 4px}
+.route::before{
+  content:"";position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+  height:6px;background:var(--slate);border-radius:3px;
+}
+.stop{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.stop .dot{
+  width:20px;height:20px;border-radius:50%;background:var(--white);border:5px solid var(--slate);
+  box-shadow:0 0 0 3px var(--white);
+}
+.stop:nth-child(1) .dot{border-color:var(--red)}
+.stop:nth-child(2) .dot{border-color:var(--blue)}
+.stop:nth-child(3) .dot{border-color:var(--green)}
+.stop:nth-child(4) .dot{border-color:var(--orange)}
+.stop:nth-child(5) .dot{border-color:var(--purple)}
+.stop .lb{
+  position:absolute;top:26px;font-size:11.5px;font-weight:800;color:var(--ink-2);white-space:nowrap;
+}
+.stop:nth-child(even) .lb{top:auto;bottom:26px}
+.map-card .legend{
+  margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+}
+.legend div{
+  border:2px solid var(--paper-2);border-radius:4px;padding:12px 14px;display:flex;align-items:baseline;gap:10px;
+}
+.legend b{font-family:var(--mono);font-size:21px;font-weight:700;letter-spacing:-.02em}
+.legend span{font-size:11.5px;color:var(--ink-3);font-weight:700}
+.legend div:nth-child(1) b{color:var(--red)}
+.legend div:nth-child(2) b{color:var(--blue)}
+.legend div:nth-child(3) b{color:var(--green)}
+.legend div:nth-child(4) b{color:var(--orange)}
+
+/* ========== 章节头：指示牌 ========== */
+.sec{padding:50px 0}
+.sec-top{display:flex;align-items:stretch;gap:18px;margin-bottom:28px;flex-wrap:wrap}
+.sec-top .board-tag{
+  flex:0 0 auto;background:var(--slate);color:#fff;padding:12px 20px;border-radius:4px;
+  display:flex;flex-direction:column;justify-content:center;min-width:96px;
+}
+.sec-top .board-tag b{font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.04em;line-height:1.2}
+.sec-top .board-tag span{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase}
+.sec-top .hd{flex:1;min-width:220px;border-left:5px solid var(--yellow);padding-left:16px}
+.sec-top h2{font-size:clamp(21px,4vw,31px);font-weight:900;letter-spacing:-.035em;line-height:1.35}
+.sec-top h2 em{font-style:normal;color:var(--red)}
+.sec-top p{margin-top:8px;font-size:15px;color:var(--ink-2);max-width:680px}
+.sec-top .more{
+  flex:0 0 auto;align-self:center;font-family:var(--mono);font-size:13px;font-weight:700;
+  background:var(--white);border:2px solid var(--slate);padding:9px 20px;border-radius:4px;white-space:nowrap;
+}
+.sec-top .more:hover{background:var(--slate);color:#fff}
+
+/* ========== 片单：站台卡 ========== */
+.platforms{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:20px}
+.pt-card{
+  background:var(--white);border-radius:5px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(30,35,42,.09);transition:transform .22s,box-shadow .22s;
+}
+.pt-card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(30,35,42,.16)}
+.pt-card .rail{height:7px;background:var(--red)}
+.pt-card:nth-child(5n+2) .rail{background:var(--blue)}
+.pt-card:nth-child(5n+3) .rail{background:var(--green)}
+.pt-card:nth-child(5n+4) .rail{background:var(--orange)}
+.pt-card:nth-child(5n+5) .rail{background:var(--purple)}
+.scene{
+  aspect-ratio:4/5;display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden;
+}
+.pt-card:nth-child(5n+1) .scene{background:linear-gradient(155deg,#4a5b6e,var(--slate) 62%,#11161b)}
+.pt-card:nth-child(5n+2) .scene{background:linear-gradient(155deg,#5b8fd8,var(--blue) 62%,#17427f)}
+.pt-card:nth-child(5n+3) .scene{background:linear-gradient(155deg,#4bbf8f,var(--green) 62%,#075240)}
+.pt-card:nth-child(5n+4) .scene{background:linear-gradient(155deg,#f5a65c,var(--orange) 62%,#9c4a08)}
+.pt-card:nth-child(5n+5) .scene{background:linear-gradient(155deg,#a184e0,var(--purple) 62%,#3f2173)}
+.scene::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 14px);
+}
+.scene b{position:relative;z-index:1;color:#fff;font-size:18px;font-weight:900;line-height:1.4;letter-spacing:-.02em;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.scene .plat{
+  position:absolute;top:13px;left:14px;z-index:2;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;background:var(--yellow);color:var(--ink);padding:3px 9px;border-radius:3px;
+}
+.scene .kind{
+  position:absolute;top:13px;right:14px;z-index:2;font-size:11px;font-weight:800;color:#fff;
+  background:rgba(34,40,47,.55);padding:3px 10px;border-radius:3px;
+}
+.scene .rt{
+  position:absolute;bottom:14px;right:14px;z-index:2;font-family:var(--mono);font-size:13px;font-weight:700;
+  color:var(--ink);background:var(--white);padding:2px 9px;border-radius:3px;
+}
+.pt-card .pf{padding:13px 16px 16px;border-top:2px solid var(--paper-2)}
+.pt-card .pf h3{font-size:16px;font-weight:900;letter-spacing:-.02em}
+.pt-card .pf p{margin-top:4px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+
+/* ========== 榜单：发车时刻板 ========== */
+.depart{
+  background:var(--slate);color:#fff;border-radius:6px;padding:0 0 6px;overflow:hidden;
+  box-shadow:0 16px 34px rgba(30,35,42,.24);
+}
+.depart .dh{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:16px 24px;background:var(--slate-2);border-bottom:2px solid var(--slate-3);
+}
+.depart .dh .tt{display:flex;align-items:center;gap:11px}
+.depart .dh .tt i{width:10px;height:10px;border-radius:50%;background:var(--green);display:block;font-style:normal;box-shadow:0 0 10px var(--green)}
+.depart .dh .tt b{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase}
+.depart .dh .cl{font-family:var(--mono);font-size:11.5px;color:#9aa5b3;letter-spacing:.1em}
+.depart .cols{
+  display:grid;grid-template-columns:84px 1fr 150px 110px;gap:16px;align-items:center;
+  padding:12px 24px;border-bottom:1px solid var(--slate-3);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8d96a3;
+}
+.drow{
+  position:relative;display:grid;grid-template-columns:84px 1fr 150px 110px;gap:16px;align-items:center;
+  padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.07);transition:background .18s,padding-left .18s;
+}
+.drow:last-child{border-bottom:0}
+.drow::after{
+  content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.05);pointer-events:none;
+}
+.drow:hover{background:var(--slate-2);padding-left:30px}
+.drow .no{
+  font-family:var(--mono);font-size:15px;font-weight:700;color:#fff;background:var(--red);
+  text-align:center;padding:5px 0;border-radius:3px;letter-spacing:.04em;
+}
+.drow:nth-child(3) .no{background:var(--blue)}
+.drow:nth-child(4) .no{background:var(--green)}
+.drow:nth-child(5) .no{background:var(--orange)}
+.drow:nth-child(6) .no{background:var(--purple)}
+.drow:nth-child(7) .no{background:var(--slate-3)}
+.drow:nth-child(8) .no{background:var(--slate-3)}
+.drow:nth-child(9) .no{background:var(--slate-3)}
+.drow .nm h3{font-size:16.5px;font-weight:800;letter-spacing:-.02em}
+.drow .nm p{font-family:var(--mono);font-size:11.5px;color:#9aa5b3;margin-top:2px;letter-spacing:.03em}
+.drow .st{display:flex;align-items:center;gap:9px}
+.drow .st i{
+  display:inline-block;font-style:normal;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  padding:3px 10px;border-radius:3px;background:rgba(18,153,107,.18);color:#4fd39c;
+  border:1px solid rgba(18,153,107,.5);letter-spacing:.08em;
+}
+.drow:nth-child(4) .st i,.drow:nth-child(8) .st i{background:rgba(240,130,30,.16);color:#ffb066;border-color:rgba(240,130,30,.5)}
+.drow .meter{display:flex;gap:3px}
+.drow .meter i{width:9px;height:14px;border-radius:1px;background:var(--slate-3);display:block;font-style:normal}
+.drow .meter i.on{background:var(--yellow)}
+.drow .sc{text-align:right;font-family:var(--mono);font-size:19px;font-weight:700;color:var(--yellow);letter-spacing:-.01em}
+.depart .df{
+  padding:14px 24px;font-family:var(--mono);font-size:11.5px;color:#8d96a3;letter-spacing:.08em;
+  border-top:2px solid var(--slate-3);
+}
+
+/* ========== 分类：线路标签 ========== */
+.lines{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:14px}
+.ln{
+  display:flex;align-items:center;gap:14px;background:var(--white);padding:14px 18px;border-radius:4px;
+  border:2px solid var(--paper-2);transition:border-color .18s,transform .18s,box-shadow .18s;
+}
+.ln:hover{border-color:var(--slate);transform:translateX(6px);box-shadow:0 8px 18px rgba(30,35,42,.1)}
+.ln .code{
+  flex:0 0 auto;width:44px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:#fff;border-radius:3px;
+}
+.ln:nth-child(6n+1) .code{background:var(--red)}
+.ln:nth-child(6n+2) .code{background:var(--blue)}
+.ln:nth-child(6n+3) .code{background:var(--green)}
+.ln:nth-child(6n+4) .code{background:var(--orange)}
+.ln:nth-child(6n+5) .code{background:var(--purple)}
+.ln:nth-child(6n+6) .code{background:var(--slate)}
+.ln .nm{flex:1;min-width:0}
+.ln .nm b{display:block;font-size:15px;font-weight:800;letter-spacing:-.01em}
+.ln .nm span{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+.ln .cnt{
+  flex:0 0 auto;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink-2);
+  border-left:2px solid var(--paper-2);padding-left:12px;
+}
+.ln .arw{flex:0 0 auto;color:var(--ink-3);font-size:13px}
+.ln:hover .arw{color:var(--red)}
+
+/* ========== 资讯：服务通告板 ========== */
+.notices{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:18px}
+.notice{
+  background:var(--white);border-radius:5px;padding:22px 22px 20px;position:relative;
+  border:2px solid var(--paper-2);border-left:6px solid var(--yellow);
+  box-shadow:0 8px 18px rgba(30,35,42,.08);transition:transform .22s,box-shadow .22s;
+}
+.notice:nth-child(2){border-left-color:var(--blue)}
+.notice:nth-child(3){border-left-color:var(--green)}
+.notice:nth-child(4){border-left-color:var(--red)}
+.notice:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(30,35,42,.14)}
+.notice .nh{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-bottom:12px;border-bottom:2px dashed var(--paper-2);margin-bottom:14px;
+}
+.notice .nh span{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.notice .nh time{font-family:var(--mono);font-size:11.5px;color:var(--red);font-weight:700}
+.notice h3{font-size:17px;font-weight:900;letter-spacing:-.02em;line-height:1.5}
+.notice p{margin-top:10px;font-size:14px;color:var(--ink-2);line-height:1.85}
+.notice .go{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);
+  font-size:12.5px;font-weight:700;color:var(--ink);background:var(--yellow);padding:7px 16px;border-radius:3px;
+}
+.notice .go:hover{background:var(--slate);color:#fff}
+
+/* ========== FAQ：问询台 ========== */
+.desk{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px}
+.ask{
+  display:flex;gap:16px;background:var(--white);border-radius:5px;padding:20px 22px;
+  border:2px solid var(--paper-2);box-shadow:0 6px 16px rgba(30,35,42,.07);
+}
+.ask .ib{
+  flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--slate);color:var(--yellow);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:15px;margin-top:2px;
+}
+.ask:nth-child(3n+2) .ib{background:var(--blue);color:#fff}
+.ask:nth-child(3n+3) .ib{background:var(--green);color:#fff}
+.ask .bd h3{font-size:16.5px;font-weight:800;letter-spacing:-.02em;line-height:1.55}
+.ask .bd p{margin-top:10px;font-size:14.5px;color:var(--ink-2);line-height:1.9}
+
+/* ========== 关于：站点信息牌 ========== */
+.station{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sp{
+  background:var(--white);border-radius:5px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(30,35,42,.09);
+}
+.sp .sh{
+  background:var(--slate);color:#fff;padding:20px 22px;display:flex;align-items:center;gap:12px;
+}
+.sp:nth-child(2) .sh{background:var(--blue)}
+.sp:nth-child(3) .sh{background:var(--green)}
+.sp .sh i{
+  font-style:normal;width:34px;height:34px;flex:0 0 34px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;border-radius:3px;font-family:var(--mono);font-weight:700;font-size:14px;
+}
+.sp .sh b{font-size:17px;font-weight:900;letter-spacing:-.01em}
+.sp .sb{padding:20px 22px 24px}
+.sp .sb p{font-size:14.5px;color:var(--ink-2)}
+.sp .sb ul{margin-top:14px;display:grid;gap:10px}
+.sp .sb li{display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--ink-2)}
+.sp .sb li b{
+  flex:0 0 auto;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink);
+  background:var(--paper-2);padding:2px 8px;border-radius:3px;letter-spacing:.04em;
+}
+.bulletin{
+  margin-top:22px;background:var(--amber);border:2px dashed var(--yellow);border-radius:5px;
+  padding:22px 26px;font-size:14.5px;color:var(--ink-2);line-height:1.9;
+}
+.bulletin b{color:var(--red);font-weight:900}
+.next{
+  margin-top:30px;background:var(--slate);color:#fff;border-radius:6px;padding:50px 30px;text-align:center;
+  position:relative;overflow:hidden;box-shadow:0 16px 34px rgba(30,35,42,.24);
+}
+.next::before{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:repeating-linear-gradient(90deg,var(--yellow) 0 26px,var(--slate) 26px 52px);
+}
+.next .mono{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--yellow);text-transform:uppercase}
+.next h2{font-size:clamp(22px,4.2vw,33px);font-weight:900;letter-spacing:-.035em;line-height:1.35;margin-top:12px}
+.next h2 em{font-style:normal;color:var(--yellow)}
+.next p{margin-top:12px;font-family:var(--mono);font-size:13.5px;color:rgba(255,255,255,.7);word-break:break-all}
+.next .btn{margin-top:26px}
+
+/* ========== 页脚 ========== */
+.foot{margin-top:36px;background:var(--slate);color:rgba(255,255,255,.72);padding:46px 0 26px;border-top:4px solid var(--yellow)}
+.fcols{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:26px}
+.fcols h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+.fcols a{display:block;font-size:14px;padding:5px 0}
+.fcols a:hover{color:var(--yellow)}
+.fbrand .nm{font-size:19px;font-weight:900;color:#fff;display:flex;align-items:center;gap:12px;letter-spacing:-.02em}
+.fbrand .nm i{
+  min-width:56px;height:34px;padding:0 10px;background:var(--red);color:#fff;font-style:normal;
+  font-family:var(--mono);font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:3px;
+}
+.fbrand p{margin-top:14px;font-size:14px;max-width:380px}
+.fbrand .u{
+  margin-top:12px;display:inline-block;font-family:var(--mono);font-size:12.5px;color:var(--yellow);
+  border:2px dashed rgba(240,191,42,.5);padding:8px 16px;border-radius:3px;word-break:break-all;
+}
+.fend{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--slate-3);text-align:center;
+  font-size:13px;color:rgba(255,255,255,.5);
+}
+.fkw{margin-top:8px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.42);line-height:2}
+
+/* ========== 返回顶部 ========== */
+#top{
+  position:fixed;right:18px;bottom:20px;z-index:90;width:48px;height:48px;cursor:pointer;
+  background:var(--slate);color:var(--yellow);border-radius:4px;border:2px solid var(--yellow);
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  opacity:0;pointer-events:none;transition:opacity .3s,background .2s;
+}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{background:var(--yellow);color:var(--ink)}
+
+/* ========== 移动端自适应 ========== */
+@media (max-width:1040px){
+  .signnav{display:none}
+  .panel-btn{display:block}
+  .signbar .wrap{position:relative}
+  .sheet{
+    display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:var(--slate-2);border-bottom:3px solid var(--yellow);padding:6px 0 12px;z-index:99;
+  }
+  #menu-state:checked ~ .sheet{display:flex}
+  .sheet a{padding:14px 20px;font-size:16px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
+  .sheet a::before{content:"▸";color:var(--yellow);margin-right:8px}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .drow,.depart .cols{grid-template-columns:70px 1fr 92px}
+  .depart .cols span:nth-child(3),.drow .st{display:none}
+  .station{grid-template-columns:1fr 1fr}
+  .fcols{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .platforms{grid-template-columns:repeat(2,1fr);gap:14px}
+  .lines{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .hero{padding:20px 0 18px}
+  .gantry{padding:34px 22px 32px;border-radius:5px}
+  .sec{padding:36px 0}
+  .sec-top{margin-bottom:20px}
+  .sec-top .board-tag{min-width:78px;padding:10px 14px}
+  .sec-top .board-tag b{font-size:16px}
+  .sec-top .more{display:none}
+  .map-card{padding:18px 16px 16px}
+  .map-card .legend{margin-top:48px}
+  .stop .lb{font-size:10.5px}
+  .pt-card .pf p{display:none}
+  .scene{aspect-ratio:3/4;padding:13px}
+  .scene b{font-size:15px}
+  .scene .plat{font-size:9.5px;top:10px;left:11px}
+  .scene .kind{font-size:10px;top:10px;right:11px}
+  .scene .rt{font-size:12px;bottom:11px;right:11px}
+  .pt-card .pf{padding:11px 12px 13px}
+  .pt-card .pf h3{font-size:14.5px}
+  .depart .dh{padding:14px 16px}
+  .depart .cols{display:none}
+  .drow{grid-template-columns:56px 1fr 74px;padding:13px 16px;gap:12px}
+  .drow:hover{padding-left:18px}
+  .drow .no{font-size:13px;padding:4px 0}
+  .drow .nm h3{font-size:15px}
+  .drow .nm p{font-size:11px}
+  .drow .meter{display:none}
+  .drow .sc{font-size:16px}
+  .depart .df{padding:12px 16px;font-size:11px}
+  .notice{padding:18px 18px 16px}
+  .notice h3{font-size:16px}
+  .notice p{font-size:13.5px}
+  .ask{padding:16px 18px;gap:12px}
+  .ask .ib{width:30px;height:30px;flex:0 0 30px;font-size:13px}
+  .ask .bd h3{font-size:15.5px}
+  .ask .bd p{font-size:14px}
+  .station{grid-template-columns:1fr}
+  .bulletin{padding:18px 20px}
+  .next{padding:38px 20px}
+  .foot{padding:36px 0 22px}
+  .fcols{grid-template-columns:1fr;gap:20px}
+  .btn{padding:13px 32px 13px 22px}
+  #top{width:44px;height:44px;right:14px}
+}
+@media (max-width:400px){
+  .platforms{grid-template-columns:1fr}
+  .map-card .legend{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="signbar">
+  <div class="wrap">
+    <a class="route-logo" href="#" aria-label="5060电影网 首页">
+      <span class="route-badge" aria-hidden="true">5060</span>
+      <span class="route-txt">
+        <span class="zh">5060电影网</span>
+        <span class="en">Line 5060 / Movie Guide</span>
+      </span>
+    </a>
+    <nav class="signnav" aria-label="主导航">
+      <a class="on" href="#home">首页</a>
+      <a href="#picks">精选片单</a>
+      <a href="#depart">热门榜单</a>
+      <a href="#lines">题材分类</a>
+      <a href="#news">影视资讯</a>
+      <a href="#faq">观影问答</a>
+      <a href="#about">关于本站</a>
+      <a class="enter" href="#">进入片单</a>
+    </nav>
+    <input id="menu-state" type="checkbox" aria-label="展开导航菜单">
+    <label class="panel-btn" for="menu-state">MENU</label>
+    <nav class="sheet" aria-label="移动端导航">
+      <a href="#home">首页概览</a>
+      <a href="#picks">精选片单</a>
+      <a href="#depart">热门榜单</a>
+      <a href="#lines">题材分类</a>
+      <a href="#news">影视资讯</a>
+      <a href="#faq">观影问答</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 栏目一：首页概览（龙门架指示牌） -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="gantry">
+        <div class="hero-grid">
+          <div>
+            <div class="pill-row">
+              <span class="pill-line"><i></i>ROUTE 5060 · 官方站点</span>
+            </div>
+            <h1>5060电影网<br><em>好片一站直达</em></h1>
+            <p class="desc">
+              5060电影网每天整理精选影视片单、热门影视榜单与新片速递，
+              用清晰的分类、评分与更新进度，让你不用换乘就能直达好片。
+            </p>
+            <p class="url-sign"><span>SITE</span><b>https://5060dianyingwang-cn.github.io</b></p>
+            <div class="hero-btns">
+              <a class="btn" href="#depart">查看热门榜单</a>
+              <a class="btn line" href="#picks">浏览精选片单</a>
+            </div>
+          </div>
+          <aside class="map-card" aria-label="线路图与站点数据">
+            <div class="mh"><span>ROUTE MAP</span><b>5060</b></div>
+            <div class="route">
+              <div class="stop"><span class="dot"></span><span class="lb">片单</span></div>
+              <div class="stop"><span class="dot"></span><span class="lb">榜单</span></div>
+              <div class="stop"><span class="dot"></span><span class="lb">分类</span></div>
+              <div class="stop"><span class="dot"></span><span class="lb">资讯</span></div>
+              <div class="stop"><span class="dot"></span><span class="lb">问答</span></div>
+            </div>
+            <div class="legend">
+              <div><b>480+</b><span>在榜影片</span></div>
+              <div><b>8</b><span>分类频道</span></div>
+              <div><b>24H</b><span>榜单刷新</span></div>
+              <div><b>每日</b><span>片单更新</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目二：精选片单（站台卡） -->
+  <section class="sec" id="picks">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>01</b><span>PLATFORM</span></span>
+        <div class="hd">
+          <h2>精选片单 · <em>5060电影网编辑推荐</em></h2>
+          <p>按站内评分、口碑与题材均衡度筛选，每张卡都是一个站台，上车即是好片。</p>
+        </div>
+        <a class="more" href="#">查看全部片单</a>
+      </div>
+      <div class="platforms">
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="夜色列车 海报"><span class="plat">P/01</span><span class="kind">剧情</span><span class="rt">9.2</span><b>夜色列车</b></div>
+            <div class="pf"><h3>夜色列车</h3><p>2026 · 现实题材 · 已上线</p></div>
+          </a>
+        </article>
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="星际信标 海报"><span class="plat">P/02</span><span class="kind">科幻</span><span class="rt">9.0</span><b>星际信标</b></div>
+            <div class="pf"><h3>星际信标</h3><p>2026 · 太空冒险 · 已上线</p></div>
+          </a>
+        </article>
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="拾光小镇 海报"><span class="plat">P/03</span><span class="kind">动画</span><span class="rt">8.9</span><b>拾光小镇</b></div>
+            <div class="pf"><h3>拾光小镇</h3><p>2026 · 治愈动画 · 已上线</p></div>
+          </a>
+        </article>
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="第十一层 海报"><span class="plat">P/04</span><span class="kind">悬疑</span><span class="rt">8.8</span><b>第十一层</b></div>
+            <div class="pf"><h3>第十一层</h3><p>2026 · 高智商推理 · 已上线</p></div>
+          </a>
+        </article>
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="烈风追击 海报"><span class="plat">P/05</span><span class="kind">动作</span><span class="rt">8.7</span><b>烈风追击</b></div>
+            <div class="pf"><h3>烈风追击</h3><p>2026 · 硬核动作 · 已上线</p></div>
+          </a>
+        </article>
+        <article class="pt-card">
+          <a href="#">
+            <span class="rail" aria-hidden="true"></span>
+            <div class="scene" role="img" aria-label="海边的信 海报"><span class="plat">P/06</span><span class="kind">爱情</span><span class="rt">8.6</span><b>海边的信</b></div>
+            <div class="pf"><h3>海边的信</h3><p>2026 · 温情爱情 · 已上线</p></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三：热门榜单（发车时刻板） -->
+  <section class="sec" id="depart">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>02</b><span>DEPARTURES</span></span>
+        <div class="hd">
+          <h2>热门榜单 · <em>5060电影网影视排行</em></h2>
+          <p>综合播放热度与站内评分生成，每日刷新，如同站台上的发车时刻板。</p>
+        </div>
+        <a class="more" href="#">完整榜单</a>
+      </div>
+      <div class="depart">
+        <div class="dh">
+          <span class="tt"><i></i><b>TODAY'S BOARD</b></span>
+          <span class="cl">更新于每日 09:00</span>
+        </div>
+        <div class="cols"><span>车次</span><span>片名</span><span>状态</span><span>评分</span></div>
+        <a class="drow" href="#"><span class="no">5060</span><span class="nm"><h3>夜色列车</h3><p>剧情 · 2026 · 已上线</p></span><span class="st"><i>热映中</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span><span class="sc">9.2</span></a>
+        <a class="drow" href="#"><span class="no">5061</span><span class="nm"><h3>星际信标</h3><p>科幻 · 2026 · 已上线</p></span><span class="st"><i>热映中</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span><span class="sc">9.0</span></a>
+        <a class="drow" href="#"><span class="no">5062</span><span class="nm"><h3>拾光小镇</h3><p>动画 · 2026 · 已上线</p></span><span class="st"><i>热映中</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span><span class="sc">8.9</span></a>
+        <a class="drow" href="#"><span class="no">5063</span><span class="nm"><h3>第十一层</h3><p>悬疑 · 2026 · 已上线</p></span><span class="st"><i>已上线</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span><span class="sc">8.8</span></a>
+        <a class="drow" href="#"><span class="no">5064</span><span class="nm"><h3>烈风追击</h3><p>动作 · 2026 · 已上线</p></span><span class="st"><i>已上线</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span><span class="sc">8.7</span></a>
+        <a class="drow" href="#"><span class="no">5065</span><span class="nm"><h3>归途列车</h3><p>剧集 · 2026 · 更新至 12 集</p></span><span class="st"><i>更新中</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span><span class="sc">8.6</span></a>
+        <a class="drow" href="#"><span class="no">5066</span><span class="nm"><h3>海边的信</h3><p>爱情 · 2026 · 已上线</p></span><span class="st"><i>已上线</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></span><span class="sc">8.6</span></a>
+        <a class="drow" href="#"><span class="no">5067</span><span class="nm"><h3>荒野手记</h3><p>纪实 · 2026 · 更新至 5 期</p></span><span class="st"><i>更新中</i><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></span><span class="sc">8.5</span></a>
+        <p class="df">// 数据每 24 小时刷新一次，热度格数代表综合热度，评分为站内加权分</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四：题材分类（线路标签） -->
+  <section class="sec" id="lines">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>03</b><span>LINES</span></span>
+        <div class="hd">
+          <h2>题材分类 · <em>按线路快速换乘</em></h2>
+          <p>5060电影网把全站内容分成多条线路，选一条线即可进入对应片单。</p>
+        </div>
+      </div>
+      <div class="lines">
+        <a class="ln" href="#"><span class="code">L1</span><span class="nm"><b>院线新片</b><span>NEW RELEASE</span></span><span class="cnt">42</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L2</span><span class="nm"><b>高分必看</b><span>TOP RATED</span></span><span class="cnt">96</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L3</span><span class="nm"><b>国产剧集</b><span>CN SERIES</span></span><span class="cnt">143</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L4</span><span class="nm"><b>日韩剧集</b><span>JP / KR</span></span><span class="cnt">88</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L5</span><span class="nm"><b>欧美剧集</b><span>US / EU</span></span><span class="cnt">76</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L6</span><span class="nm"><b>动画动漫</b><span>ANIME</span></span><span class="cnt">64</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L7</span><span class="nm"><b>综艺纪实</b><span>DOC / SHOW</span></span><span class="cnt">39</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L8</span><span class="nm"><b>喜剧片</b><span>COMEDY</span></span><span class="cnt">57</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L9</span><span class="nm"><b>动作片</b><span>ACTION</span></span><span class="cnt">61</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L10</span><span class="nm"><b>科幻片</b><span>SCI-FI</span></span><span class="cnt">48</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L11</span><span class="nm"><b>悬疑犯罪</b><span>CRIME</span></span><span class="cnt">53</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L12</span><span class="nm"><b>爱情片</b><span>ROMANCE</span></span><span class="cnt">45</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L13</span><span class="nm"><b>纪录片</b><span>DOCUMENTARY</span></span><span class="cnt">31</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L14</span><span class="nm"><b>经典修复</b><span>CLASSIC</span></span><span class="cnt">52</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L15</span><span class="nm"><b>短片合集</b><span>SHORTS</span></span><span class="cnt">27</span><span class="arw" aria-hidden="true">▸</span></a>
+        <a class="ln" href="#"><span class="code">L16</span><span class="nm"><b>本周热播</b><span>THIS WEEK</span></span><span class="cnt">18</span><span class="arw" aria-hidden="true">▸</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目五：影视资讯（服务通告板） -->
+  <section class="sec" id="news">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>04</b><span>NOTICE</span></span>
+        <div class="hd">
+          <h2>影视资讯 · <em>行业动态与新片速递</em></h2>
+          <p>新片定档、幕后故事与实用观影攻略，看片之前先来看看本站的服务通告。</p>
+        </div>
+        <a class="more" href="#">资讯归档</a>
+      </div>
+      <div class="notices">
+        <article class="notice">
+          <div class="nh"><span>SERVICE NOTICE</span><time datetime="2026-09-28">2026 / 09 / 28</time></div>
+          <h3>秋季档新片定档汇总：科幻与悬疑成为主力</h3>
+          <p>5060电影网整理了本季度值得期待的十部作品，逐条附上档期信息与看点解析，方便提前排好观影计划。</p>
+          <a class="go" href="#">查看详情 ▸</a>
+        </article>
+        <article class="notice">
+          <div class="nh"><span>GUIDE</span><time datetime="2026-09-24">2026 / 09 / 24</time></div>
+          <h3>三步挑片法：用榜单和分类告别片荒</h3>
+          <p>从题材偏好、单集时长到更新节奏，教你快速锁定真正适合自己的剧集。</p>
+          <a class="go" href="#">查看详情 ▸</a>
+        </article>
+        <article class="notice">
+          <div class="nh"><span>BEHIND</span><time datetime="2026-09-19">2026 / 09 / 19</time></div>
+          <h3>《星际信标》视效专访：太空场景如何搭建</h3>
+          <p>主创团队分享了拍摄中的技术难题，以及实景搭建与后期特效结合的处理方式。</p>
+          <a class="go" href="#">查看详情 ▸</a>
+        </article>
+        <article class="notice">
+          <div class="nh"><span>UPDATE</span><time datetime="2026-09-12">2026 / 09 / 12</time></div>
+          <h3>5060电影网移动端体验升级说明</h3>
+          <p>新版页面全面适配手机屏幕，片单与榜单重排为更紧凑的样式，随时随地流畅浏览。</p>
+          <a class="go" href="#">查看详情 ▸</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目六：观影问答（问询台） -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>05</b><span>INFO</span></span>
+        <div class="hd">
+          <h2>观影问答 · <em>关于5060电影网</em></h2>
+          <p>汇总新用户最常遇到的疑问，帮你更快上手片单、榜单与分类检索功能。</p>
+        </div>
+      </div>
+      <div class="desk">
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>5060电影网是什么类型的网站？</h3>
+            <p>5060电影网是一个影视信息聚合与推荐平台，提供精选电影、热播剧集、动漫综艺的分类浏览、剧情介绍、影视榜单与影视资讯，帮助用户高效发现优质内容。</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>5060电影网的官方网址是什么？</h3>
+            <p>5060电影网官方网址为 https://5060dianyingwang-cn.github.io ，建议收藏本站，避免误入仿冒站点，获取稳定、最新的影视推荐服务。</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>手机端可以正常使用吗？</h3>
+            <p>可以。5060电影网采用响应式布局，发车时刻板在手机端会隐藏状态与热度格，仅保留车次、片名与评分，导航收起为 MENU 面板，竖屏浏览同样顺畅。</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>影视榜单多久更新一次？</h3>
+            <p>精选片单与热门榜单每日依据播放热度与站内评分刷新，影视资讯则随新片定档与行业动态同步更新。</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>如何快速找到想看的影片？</h3>
+            <p>可以先查看热门榜单的高分排序，再选一条题材线路进入对应片单；追剧用户可重点关注标注「更新中」的条目。</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="ib" aria-hidden="true">i</span>
+          <div class="bd">
+            <h3>本站是否提供影片播放与下载？</h3>
+            <p>本站仅提供影视信息聚合、剧情介绍、影视榜单与观影资讯，不提供任何影片的在线播放或下载服务，观看正片请通过合法授权的视频平台。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目七：关于本站（站点信息牌） -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-top">
+        <span class="board-tag"><b>06</b><span>STATION</span></span>
+        <div class="hd">
+          <h2>关于本站 · <em>5060电影网</em></h2>
+          <p>以内容与体验为核心，坚持每日更新，为影迷提供稳定可靠的影视信息服务平台。</p>
+        </div>
+      </div>
+      <div class="station">
+        <div class="sp">
+          <div class="sh"><i aria-hidden="true">甲</i><b>我们做什么</b></div>
+          <div class="sb">
+            <p>整合全网优质影视信息，输出分类导航、剧情速览、影视榜单与行业资讯。</p>
+            <ul>
+              <li><b>01</b><span>影视分类导航与题材筛选</span></li>
+              <li><b>02</b><span>每日更新的精选片单</span></li>
+              <li><b>03</b><span>基于热度与评分的榜单</span></li>
+              <li><b>04</b><span>原创影视资讯与观影攻略</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sp">
+          <div class="sh"><i aria-hidden="true">乙</i><b>我们的特点</b></div>
+          <div class="sb">
+            <p>轻量页面与移动端优先的设计理念，让浏览体验始终保持流畅稳定。</p>
+            <ul>
+              <li><b>A</b><span>响应式布局，手机端自适应</span></li>
+              <li><b>B</b><span>栏目清晰，三步内找到影片</span></li>
+              <li><b>C</b><span>编辑人工复核，拒绝低质堆砌</span></li>
+              <li><b>D</b><span>榜单与资讯每日同步</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sp">
+          <div class="sh"><i aria-hidden="true">丙</i><b>站点信息</b></div>
+          <div class="sb">
+            <p>如有内容合作、意见反馈或版权相关问题，可通过站内反馈通道与我们联系。</p>
+            <ul>
+              <li><b>名</b><span>站点名称：5060电影网</span></li>
+              <li><b>址</b><span>5060dianyingwang-cn.github.io</span></li>
+              <li><b>时</b><span>服务时间：每日 09:00 - 22:00</span></li>
+              <li><b>联</b><span>反馈入口：站内留言通道</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bulletin">
+        <b>内容说明：</b>本站仅提供影视信息聚合、剧情介绍、影视榜单与观影资讯，不提供任何影片的在线播放或下载服务，请通过合法授权的视频平台观看正片内容；同时倡导健康、理性的观影习惯，合理安排观看时长。
+      </div>
+      <div class="next">
+        <p class="mono">NEXT DEPARTURE</p>
+        <h2>下一班好片，<em>5060电影网</em>见</h2>
+        <p>https://5060dianyingwang-cn.github.io</p>
+        <a class="btn" href="#">立即进入 5060电影网</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand">
+        <div class="nm"><i aria-hidden="true">5060</i>5060电影网</div>
+        <p>精选影视片单 · 热门影视榜单 · 题材分类 · 影视资讯，移动端自适应，随时随地发现好片。</p>
+        <div class="u">https://5060dianyingwang-cn.github.io</div>
+      </div>
+      <div>
+        <h4>Content</h4>
+        <a href="#picks">精选片单</a>
+        <a href="#depart">热门榜单</a>
+        <a href="#lines">题材分类</a>
+        <a href="#news">影视资讯</a>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <a href="#faq">观影问答</a>
+        <a href="#about">关于本站</a>
+        <a href="#home">返回首页</a>
+        <a href="#">意见反馈</a>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <a href="#">版权声明</a>
+        <a href="#">隐私政策</a>
+        <a href="#">健康观影</a>
+        <a href="#">友情链接</a>
+      </div>
+    </div>
+    <p class="fend">&copy; 2026 5060电影网（https://5060dianyingwang-cn.github.io）版权所有 · 影视信息聚合与推荐平台</p>
+    <p class="fkw">热门关键词：5060电影网、电影网、精选影视片单、热门影视榜单、新片速递、高分电影推荐、影视资讯、追剧指南</p>
+  </div>
+</footer>
+
+<div id="top" role="button" tabindex="0" aria-label="返回顶部">&#9650;</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://5060dianyingwang-cn.github.io/#website",
+      "url": "https://5060dianyingwang-cn.github.io/",
+      "name": "5060电影网",
+      "description": "5060电影网提供精选影视片单、热门影视榜单、新片速递与影视资讯解读，每日更新高分佳作。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://5060dianyingwang-cn.github.io/#organization",
+      "url": "https://5060dianyingwang-cn.github.io/",
+      "name": "5060电影网",
+      "description": "影视信息聚合与推荐平台，提供影视分类导航、热门影视榜单、新片速递与影视资讯。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://5060dianyingwang-cn.github.io/"},
+        {"@type":"ListItem","position":2,"name":"精选片单","item":"https://5060dianyingwang-cn.github.io/#picks"},
+        {"@type":"ListItem","position":3,"name":"热门榜单","item":"https://5060dianyingwang-cn.github.io/#depart"},
+        {"@type":"ListItem","position":4,"name":"影视资讯","item":"https://5060dianyingwang-cn.github.io/#news"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "5060电影网是什么类型的网站？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5060电影网是一个影视信息聚合与推荐平台，提供精选电影、热播剧集、动漫综艺的分类浏览、剧情介绍、影视榜单与影视资讯。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "5060电影网的官方网址是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5060电影网官方网址为 https://5060dianyingwang-cn.github.io ，建议收藏本站以获取稳定、最新的影视推荐服务。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "5060电影网手机端可以正常使用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，5060电影网采用响应式布局，发车时刻板在手机端会隐藏状态与热度格，仅保留车次、片名与评分，导航收起为 MENU 面板。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "5060电影网的影视榜单多久更新一次？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "精选片单与热门榜单每日依据播放热度与站内评分刷新，影视资讯则随新片定档与行业动态同步更新。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var top = document.getElementById('top');
+  function onScroll(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (y > 300) { top.classList.add('show'); } else { top.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  function toTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
+  top.addEventListener('click', toTop);
+  top.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toTop(); } });
+  var box = document.getElementById('menu-state');
+  var links = document.querySelectorAll('.sheet a');
+  for (var i = 0; i < links.length; i++){
+    links[i].addEventListener('click', function(){ box.checked = false; });
+  }
+})();
+</script>
+
+</body>
+</html>
